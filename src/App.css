@@ -1,4 +1,6 @@
-
+body{
+  background-color: #E5FDD1;
+}
 .App{
   text-align: center;
   justify-content: center;
@@ -6,10 +8,22 @@
 
 /* input bar styles */
 .taskToAdd{
-  margin-top: 10%;
+  margin-top: 5%;
   width: 50%;
   height: 50px;
 }
+.addNewTask{
+  display: none;
+}
 .addNewTask button {
   height: 55px;
+}
+.displayAddTask{
+  margin-top: 50px;
+  width: 150px;
+  height: 70px;
+  border: none;
+  font-size: 0.8em;
+  background-color: #113946;
+  color: white;
 }

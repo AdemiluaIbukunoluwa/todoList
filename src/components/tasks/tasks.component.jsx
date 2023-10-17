@@ -6,7 +6,6 @@ export const Tasks = ({ taskList }) => {
       toRemove.remove()
   };
 
-  var name = ``;
   // add color picker for each task
   return (
     <div className="tasks">
