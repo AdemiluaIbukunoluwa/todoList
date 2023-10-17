@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Tasks } from "./components/tasks/tasks.component";
+import "./App.css"
 
 function App() {
   const [task, setTask] = useState('')
@@ -22,8 +23,9 @@ function App() {
   }
   return (
     <div className="App">
+      <button>View Completed Tasks</button>
 
-      {/* can only create component for input when i add user context */}
+      {/* can only create a seperate component for input when i add user context */}
       <div className="addNewTask">
         <input type="text" className="taskToAdd" onChange={(event) => InputBarListener(event)}/>
         <button onClick={addTask}>Add Task</button>
