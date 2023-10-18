@@ -14,7 +14,7 @@ export const Tasks = ({ taskList }) => {
         return (
           //set a classname to task + the index of this particular task so that we can access this exact task when we want to delete
           <div
-            className={`task task${taskList.indexOf(task)} okay`}
+            className={`task task${taskList.indexOf(task)} col-xl-1`}
             key={taskList.indexOf(task)}
           >
             <input type="checkbox" />

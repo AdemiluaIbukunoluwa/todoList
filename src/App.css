@@ -1,3 +1,4 @@
+
 body{
   background-color: #E5FDD1;
 }
@@ -5,7 +6,11 @@ body{
   text-align: center;
   justify-content: center;
 }
-
+.heading{
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 2.5em;
+  margin: 2%;
+}
 /* input bar styles */
 .taskToAdd{
   margin-top: 5%;
@@ -17,13 +22,20 @@ body{
 }
 .addNewTask button {
   height: 55px;
+  border: none;
+  background-color: #113946;
+  color: white;
 }
-.displayAddTask{
-  margin-top: 50px;
+.displayAddTask, .hide{
   width: 150px;
   height: 70px;
   border: none;
   font-size: 0.8em;
   background-color: #113946;
   color: white;
+  margin: 2px;
+}
+
+.hide{
+  display: none;
 }
