@@ -1,3 +1,4 @@
+// component to display tasks that have been set
 import { useContext } from "react";
 import "./tasks.component.css";
 import { UserContext } from "../../context/tasks.context";
@@ -7,7 +8,7 @@ export const Tasks = () => {
 
   const deleteTask = (index) => {
       let toRemove = document.querySelector(`.${index}`)
-      toRemove.remove()
+      toRemove.remove() //deletes task from the list
   };
 
   const {allTasks} = useContext(UserContext)
@@ -23,7 +24,7 @@ export const Tasks = () => {
             key={allTasks.indexOf(task)}
           >
             <input type="checkbox" />
-            <p>{task}</p>
+            <p className="task-text">{task}</p>
             <button
               className="delete"
               onClick={() => deleteTask(`task${allTasks.indexOf(task)}`)}
