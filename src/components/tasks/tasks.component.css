@@ -1,13 +1,13 @@
 .task{
     display: flex;
     flex-direction: row;
-    background-color: lightblue;
-    color: white;
+    background-color: #EDF1D6;
+    color: black;
     width: 50vw;
     margin: 10px auto;
     font-size: 1.3vw;
     text-align: left;
-    padding: 5px 
+
 }
 
 .delete{
@@ -16,8 +16,9 @@
 }
 
 input[type="checkbox"]{
-    width: 1.5vw;
+    width: 1.5vw; 
 }
+
 .delete{
     text-align: right;
     float: right;
@@ -27,4 +28,7 @@ input[type="checkbox"]{
     background-position: center;
     background-size: 20px;
     margin-left: auto;
+}
+.task-text{
+    align-self: baseline;
 }

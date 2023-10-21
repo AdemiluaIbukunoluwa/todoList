@@ -26,6 +26,7 @@ export const Tasks = () => {
             <input type="checkbox" />
             <p className="task-text">{task}</p>
             <button
+              title="Delete Task"
               className="delete"
               onClick={() => deleteTask(`task${allTasks.indexOf(task)}`)}
             ></button>
