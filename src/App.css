@@ -1,13 +1,25 @@
+body {
+  background-color: #e5fdd1;
+}
+body {
+  height: 100%;
+  width: 100%;
+}
+.heading {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 3vw;
+  height: 5vw;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+.components {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.tasks,
+.addTask {
+  width: 50%;
+}
 
-body{
-  background-color: #E5FDD1;
-}
-.App{
-  text-align: center;
-  justify-content: center;
-}
-.heading{
-  font-family: 'Gloria Hallelujah', cursive;
-  font-size: 2.5em;
-  margin: 2%;
-}
+

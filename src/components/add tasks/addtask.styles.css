@@ -1,6 +1,6 @@
-/* input bar styles */
+
 .taskToAdd{
-    margin-top: 5%;
+    margin-top: 3%;
     width: 50%;
     height: 50px;
   }
@@ -18,11 +18,20 @@
     height: 70px;
     border: none;
     font-size: 0.8em;
-    background-color: #113946;
+    /* background-color: #113946; */
     color: white;
     margin: 2px;
   }
-  
+  .displayAddTask{
+    background: none;
+    background-image: url(../../assets/addTask.png);
+    border: none;
+    width: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-left: auto;
+  }
   .hide{
     display: none;
   }

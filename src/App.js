@@ -4,11 +4,12 @@ import { AddTask } from "./components/add tasks/addtask.component";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App text-center">
       <h1 className="heading">My to-do List</h1>
-      <AddTask />
-      <Tasks />
-      {/*will remove parameter after adding context */}
+      <div className="components"> 
+        <AddTask />
+        <Tasks />
+      </div>
     </div>
   );
 }

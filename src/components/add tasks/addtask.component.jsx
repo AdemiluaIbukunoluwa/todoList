@@ -41,10 +41,10 @@ export const AddTask = () => {
   };
 
   return (
-    <div>
+    <div className="addTask">
       {/* add new task button */}
       <button className="displayAddTask" onClick={displayAddTask}>
-        Add New Task
+      
       </button>
       <button className="hide" onClick={hideInputBar}>Hide</button>
       {/* can only create a seperate component for input when i add user context */}
