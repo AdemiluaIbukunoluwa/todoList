@@ -1,61 +1,46 @@
-// contains input bar, and buttons
 import { useContext } from "react";
-import { UserContext } from "../../context/tasks.context";
-import "./addtask.styles.css"
-export const AddTask = () => {
-  
-  const {setAllTasks, setTask, task, allTasks} = useContext(UserContext)
+import "./addtask.styles.css";
+import { TaskContext } from "../../context/tasks.context";
 
-  const addTask = () => {
-    if (task !== "") {
-      allTasks.push(task);
+const AddTask = () => {
+  const { setTaskColor, setCurrentTask, currentTask, setAllTasks, allTasks } =
+    useContext(TaskContext);
+
+  const AddNewTask = () => {
+    if (currentTask !== "") {
+      allTasks.push(currentTask);
       setAllTasks(allTasks);
-      setTask(""); //this allows the task to show immediately i click add(for some reason) :)
+      setCurrentTask(""); //this allows the task to show immediately i click add(for some reason) :)
       //add code here to make the text in the input box to clear after adding the task
       document.querySelector(".taskToAdd").value = "";
-      hideInputBar()
     }
-  }
-  
-  
-  // to hide the input bar
-  const hideInputBar = () => {
-    //make input bar and hide button invincible
-    let hide = document.querySelector(".hide")
-    let input = document.querySelector(".addNewTask");
-    input.style.display = "none";
-    hide.style.display = "none"
-  };
-  // to change the value of the current task
-  //I'm using a function instead so i can add listener for when user clicks enter instead of add
-  // I'm planning to enable user to add a task when the click enter
-  const InputBarListener = (event) => {
-    setTask(event.target.value);
-  };
-  
-  const displayAddTask = () => {
-    let input = document.querySelector(".addNewTask");
-    let hide = document.querySelector(".hide");
-    input.style.display = "block";
-    hide.style.display = "inline-block";
+    console.log(allTasks);
   };
 
   return (
     <div className="addTask">
-      {/* add new task button */}
-      <button className="displayAddTask" onClick={displayAddTask}>
-      
-      </button>
-      <button className="hide" onClick={hideInputBar}>Hide</button>
-      {/* can only create a seperate component for input when i add user context */}
-      <div className="addNewTask">
+      <button className="addButton"></button>
+
+      <div className="taskDetails">
         <input
           type="text"
+          placeholder="New Task"
           className="taskToAdd"
-          onChange={(event) => InputBarListener(event)}
+          onChange={(event) => setCurrentTask(event.target.value)}
         />
-        <button onClick={addTask}>Add Task</button>
+        <button className="addTaskButton" onClick={AddNewTask}>
+          Add Task
+        </button>
+        <div className="selectColor">
+          <label>Select Color</label>
+          <input
+            type="color"
+            onChange={(event) => setTaskColor(event.target.value)}
+          />
+        </div>
       </div>
-      </div>
-  )
-}
+    </div>
+  );
+};
+
+export default AddTask;

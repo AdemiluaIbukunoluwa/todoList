@@ -1,5 +1,5 @@
 body {
-  background-color: #e5fdd1;
+  background-color: #EEFDEC;
 }
 body {
   height: 100%;
@@ -20,6 +20,13 @@ body {
 .tasks,
 .addTask {
   width: 50%;
+  height: 80vh;
+}
+.tasks{
+  background-color: #7FA8E6;
 }
 
+.addTask{
+  background-color: white;
+}
 

@@ -1,21 +1,34 @@
-import { createContext, useState } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { createContext } from "react";
 
-export const UserContext = createContext({
-    task : null,
-    setTask: () => null,
-    allTasks: [],
-    setAllTasks : () => null,
-    completedTasks: null, 
-    setCompletedTasks: () => null
-})
+export const TaskContext = createContext({
+  taskColor: "black",
+  setTaskColor: () => "black",
+  allTasks: [],
+  setAllTasks: () => [],
+  currentTask: '',
+  setCurrentTask: () => '',
+});
 
-export const UserProvider = ({children}) => {
-    const [task, setTask] = useState("");
-    const [allTasks, setAllTasks] = useState([]);
-    const [completedTasks, setCompletedTasks] = useState([]);
+export const TaskProvider = ({ children }) => {
+  // default color for each task is black, might change later*
+  const [taskColor, setTaskColor] = useState("black");
+  const [allTasks, setAllTasks] = useState([]);
+  const [currentTask, setCurrentTask] = useState('');
 
-    const values = {task, setTask, allTasks, setAllTasks, completedTasks, setCompletedTasks}
-    return(
-        <UserContext.Provider value={values}>{children}</UserContext.Provider>
-    )
-}
+  const values = {
+    taskColor,
+    setTaskColor,
+    allTasks,
+    setAllTasks,
+    currentTask,
+    setCurrentTask,
+  };
+
+  useEffect(() => {}, [taskColor]);
+
+  // adds current task to the tasklist
+
+  return <TaskContext.Provider value={values}>{children}</TaskContext.Provider>;
+};

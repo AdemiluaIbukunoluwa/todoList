@@ -1,27 +1,41 @@
-.task{
-    display: flex;
-    flex-direction: row;
-    background-color: green;
+.tasks h3{
+    margin-top: 20px;
+    justify-content: center;
+}
+.taskList{
+    margin-top: 50px;
 }
 
-/* input[type="checkbox"]{
-     width: 2vw; 
-    height: 2vw; 
-} */
-
-.delete{
-    background: none;
-    border: none;
-    text-align: right;
-    float: right;
-    width: 40px;
+.deleteTask{
+    background: transparent;
     background-image: url('../../assets/DeleteTask.png');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px;
+    background-size: cover;
+    border: none;
+    width: 25px;
+    height: 27px;
     margin-left: auto;
+    padding-right: 5px;
 }
 
-.task-text{
-    font-size: 1rem;
+.task{
+    align-items: baseline;
+    height: 30px;
+    width: 40vw;
+    margin: auto;
+    padding: auto;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    font-family: Imprima;
+    margin-bottom: 20px
+}
+
+input[type='checkbox']{
+    accent-color: black;
+    margin: 4px 0 0;
+    line-height: normal;
+    width: 20px;
+    height: 20px;
 }
