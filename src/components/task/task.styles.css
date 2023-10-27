@@ -1,0 +1,33 @@
+.deleteTask{
+    background: transparent;
+    background-image: url('../../assets/DeleteTask.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    width: 25px;
+    height: 27px;
+    margin-left: auto;
+    padding-right: 5px;
+}
+
+.task{
+    align-items: baseline;
+    height: 30px;
+    width: 40vw;
+    margin: auto;
+    padding: auto;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    font-family: Imprima;
+    margin-bottom: 20px
+}
+
+input[type='checkbox']{
+    accent-color: black;
+    margin: 4px 0 0;
+    line-height: normal;
+    width: 20px;
+    height: 20px;
+}
