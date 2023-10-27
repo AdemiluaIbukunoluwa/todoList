@@ -14,7 +14,7 @@ const AddTask = () => {
       //add code here to make the text in the input box to clear after adding the task
       document.querySelector(".taskToAdd").value = "";
     }
-    console.log(allTasks);
+    console.log(allTasks)
   };
 
   return (

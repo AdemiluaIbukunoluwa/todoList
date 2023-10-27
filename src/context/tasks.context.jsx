@@ -26,7 +26,7 @@ export const TaskProvider = ({ children }) => {
     setCurrentTask,
   };
 
-  useEffect(() => {}, [taskColor]);
+  // useEffect(() => {}, [taskColor]);
 
   // adds current task to the tasklist
 
