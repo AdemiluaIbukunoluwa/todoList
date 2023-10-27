@@ -13,7 +13,7 @@ export const TaskContext = createContext({
 
 export const TaskProvider = ({ children }) => {
   // default color for each task is black, might change later*
-  const [taskColor, setTaskColor] = useState("black");
+  const [taskColor, setTaskColor] = useState("#f0f8ff");
   const [allTasks, setAllTasks] = useState([]);
   const [currentTask, setCurrentTask] = useState('');
 
@@ -26,7 +26,7 @@ export const TaskProvider = ({ children }) => {
     setCurrentTask,
   };
 
-  // useEffect(() => {}, [taskColor]);
+  useEffect(() => {}, [taskColor]);
 
   // adds current task to the tasklist
 

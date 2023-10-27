@@ -3,7 +3,7 @@ import "./addtask.styles.css";
 import { TaskContext } from "../../context/tasks.context";
 
 const AddTask = () => {
-  const { setTaskColor, setCurrentTask, currentTask, setAllTasks, allTasks } =
+  const { taskColor, setTaskColor, setCurrentTask, currentTask, setAllTasks, allTasks } =
     useContext(TaskContext);
 
   const AddNewTask = () => {
@@ -14,7 +14,6 @@ const AddTask = () => {
       //add code here to make the text in the input box to clear after adding the task
       document.querySelector(".taskToAdd").value = "";
     }
-    console.log(allTasks)
   };
 
   return (
@@ -35,6 +34,7 @@ const AddTask = () => {
           <label>Select Color</label>
           <input
             type="color"
+            value={taskColor}
             onChange={(event) => setTaskColor(event.target.value)}
           />
         </div>
