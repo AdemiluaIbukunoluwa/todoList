@@ -1,20 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "./addtask.styles.css";
 import { TaskContext } from "../../context/tasks.context";
 
 const AddTask = () => {
-  const { taskColor, setTaskColor, setCurrentTask, currentTask, setAllTasks, allTasks } =
-    useContext(TaskContext);
+  const { addNewTask } = useContext(TaskContext);
+  const [currentTask, setCurrentTask] = useState({ text: null, color: "#5ad4ed" });
+  // default color for each task is black, might change later*
 
-  const AddNewTask = () => {
-    if (currentTask !== "") {
-      allTasks.push(currentTask);
-      setAllTasks(allTasks);
-      setCurrentTask(""); //this allows the task to show immediately i click add(for some reason) :)
-      //add code here to make the text in the input box to clear after adding the task
-      document.querySelector(".taskToAdd").value = "";
-    }
-  };
+  const addNewTaskHandler = () => addNewTask(currentTask);
 
   return (
     <div className="addTask">
@@ -25,17 +18,21 @@ const AddTask = () => {
           type="text"
           placeholder="New Task"
           className="taskToAdd"
-          onChange={(event) => setCurrentTask(event.target.value)}
+          onChange={(event) =>
+            setCurrentTask({ ...currentTask, text: event.target.value })
+          }
         />
-        <button className="addTaskButton" onClick={AddNewTask}>
+        <button className="addTaskButton" onClick={addNewTaskHandler}>
           Add Task
         </button>
         <div className="selectColor">
           <label>Select Color</label>
           <input
             type="color"
-            value={taskColor}
-            onChange={(event) => setTaskColor(event.target.value)}
+            value="#5ad4ed"
+            onChange={(event) =>
+              setCurrentTask({ ...currentTask, color: event.target.value })
+            }
           />
         </div>
       </div>

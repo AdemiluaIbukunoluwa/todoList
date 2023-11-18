@@ -1,32 +1,41 @@
-import { useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 
 export const TaskContext = createContext({
-  taskColor: "black",
-  setTaskColor: () => "black",
   allTasks: [],
   setAllTasks: () => [],
-  currentTask: '',
-  setCurrentTask: () => '',
+  deleteTask: () => {},
+  addNewTask: () => {},
 });
 
 export const TaskProvider = ({ children }) => {
-  // default color for each task is black, might change later*
-  const [taskColor, setTaskColor] = useState("#f0f8ff");
-  const [allTasks, setAllTasks] = useState([]);
-  const [currentTask, setCurrentTask] = useState('');
-
-  const values = {
-    taskColor,
-    setTaskColor,
-    allTasks,
-    setAllTasks,
-    currentTask,
-    setCurrentTask,
+  // add new task to the beginning on the task list(unshift)
+  const addNewTask = (task) => {
+    if (task.text) {
+      allTasks.unshift({...task});
+      setAllTasks(allTasks);
+      //this allows the task to show immediately i click add(for some reason) :)
+      //add code here to make the text in the input box to clear after adding the task
+      document.querySelector(".taskToAdd").value = "";
+      console.log(allTasks)
+    }
   };
 
-  useEffect(() => {}, [taskColor]);
+  // delete tasks by filtering through tasklist and setting all tasks to the filtered list
+  const deleteTask = (taskId) => {
+    const filteredTasks = allTasks.filter(
+      (task) => allTasks.indexOf(task) !== taskId
+    );
+    setAllTasks(filteredTasks);
+  };
+
+  const [allTasks, setAllTasks] = useState([]);
+
+  const values = {
+    allTasks,
+    deleteTask,
+    addNewTask,
+  };
 
   // adds current task to the tasklist
 
