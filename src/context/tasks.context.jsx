@@ -6,18 +6,18 @@ export const TaskContext = createContext({
   setAllTasks: () => [],
   deleteTask: () => {},
   addNewTask: () => {},
+  showAddTask: true,
+  setShowAddTask: () => {}
 });
 
 export const TaskProvider = ({ children }) => {
   // add new task to the beginning on the task list(unshift)
   const addNewTask = (task) => {
     if (task.text) {
-      allTasks.unshift({...task});
-      setAllTasks(allTasks);
+      setAllTasks([...allTasks, {...task}])
       //this allows the task to show immediately i click add(for some reason) :)
       //add code here to make the text in the input box to clear after adding the task
       document.querySelector(".taskToAdd").value = "";
-      console.log(allTasks)
     }
   };
 
@@ -30,11 +30,14 @@ export const TaskProvider = ({ children }) => {
   };
 
   const [allTasks, setAllTasks] = useState([]);
+  const [showAddTask, setShowAddTask] = useState(true)
 
   const values = {
     allTasks,
     deleteTask,
     addNewTask,
+    showAddTask,
+    setShowAddTask
   };
 
   // adds current task to the tasklist

@@ -1,5 +1,5 @@
 body {
-  background-color: #EEFDEC;
+  background-color: #eefdec;
 }
 body {
   height: 100%;
@@ -19,14 +19,44 @@ body {
 }
 .tasks,
 .addTask {
-  width: 50%;
+  /* width: 50%; */
   height: 80vh;
 }
-.tasks{
-  background-color: #7FA8E6;
+.tasks {
+  background-color: #7fa8e6;
 }
 
-.addTask{
+.addTask {
   background-color: white;
 }
 
+.addButton {
+  display: none;
+  background: none;
+  border: none;
+  background: url("./assets/addTask.png") no-repeat;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  float: left;
+}
+@media screen and (max-width: 1100px) {
+  /* .addTask {
+    display: none;
+  }
+  .tasks {
+    width: 100vw;
+  }
+  .addButton {
+    display: block;
+  } */
+
+  .components{
+    flex-direction: column;
+  }
+
+  .heading{
+    font-size: 1.5rem;
+  }
+}

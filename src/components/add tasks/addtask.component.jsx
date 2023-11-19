@@ -5,13 +5,16 @@ import { TaskContext } from "../../context/tasks.context";
 const AddTask = () => {
   const { addNewTask } = useContext(TaskContext);
   const [currentTask, setCurrentTask] = useState({ text: null, color: "#5ad4ed" });
+
   // default color for each task is black, might change later*
 
-  const addNewTaskHandler = () => addNewTask(currentTask);
+  const addNewTaskHandler = () =>{
+    addNewTask(currentTask)
+    setCurrentTask({...currentTask, text: null})
+  };
 
   return (
-    <div className="addTask">
-      <button className="addButton"></button>
+    <div className="addTask col-6">
 
       <div className="taskDetails">
         <input
@@ -29,7 +32,7 @@ const AddTask = () => {
           <label>Select Color</label>
           <input
             type="color"
-            value="#5ad4ed"
+            value={currentTask.color}
             onChange={(event) =>
               setCurrentTask({ ...currentTask, color: event.target.value })
             }
