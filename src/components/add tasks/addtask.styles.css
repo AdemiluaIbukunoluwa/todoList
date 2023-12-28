@@ -22,7 +22,7 @@ input[type = 'text']{
   margin-right: 10px;
 }
 
-.selectColor{
+.selectColor, .time{
   float: left;
   border: none;
   margin: 40px 0 0 100px;
@@ -42,6 +42,7 @@ input[type = 'text']{
     text-align: center;
     margin: auto;
     width: 100vw;
-    height: 40vh;
+    height: 30%;
+    padding-bottom: 20px;
   }
 }

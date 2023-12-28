@@ -1,4 +1,4 @@
-.deleteTask{
+.deleteTask, .editTask{
     background: transparent;
     background-image: url('../../assets/DeleteTask.png');
     background-repeat: no-repeat;
@@ -6,12 +6,21 @@
     border: none;
     width: 25px;
     height: 27px;
-    margin-left: auto;
     padding-right: 5px;
 }
-
+.editTask{
+    background-image: url('../../assets/Edit.png');
+    width: 20px;
+    height: 25px;
+    margin-right: 5px;
+}
+.timevalue{
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-left: auto;
+    margin-right: 5px;
+}
 .task{
-    align-items: baseline;
     height: 30px;
     width: 40vw;
     margin: auto;

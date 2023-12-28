@@ -2,21 +2,36 @@ import { useState } from "react";
 import { createContext } from "react";
 
 export const TaskContext = createContext({
+  currentTask: {},
+  setCurrentTask: () => {},
   allTasks: [],
   setAllTasks: () => [],
   deleteTask: () => {},
   addNewTask: () => {},
+  completedTasks: [],
+  setCompletedTasks: () => [],
+  setCompletedTasksHandler: () => {},
   showAddTask: true,
-  setShowAddTask: () => {}
+  setShowAddTask: () => {},
+  editTask: () => {}
 });
 
 export const TaskProvider = ({ children }) => {
-  // add new task to the beginning on the task list(unshift)
+  // const date = new Date();
+  // const time = date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+  const [allTasks, setAllTasks] = useState([]);
+  const [showAddTask, setShowAddTask] = useState(true)
+  const [completedTasks, setCompletedTasks] = useState([])
+  const [currentTask, setCurrentTask] = useState({
+    text: null,
+    color: "#5ad4ed",
+    isChecked: false,
+  });
+  
   const addNewTask = (task) => {
     if (task.text) {
       setAllTasks([...allTasks, {...task}])
       //this allows the task to show immediately i click add(for some reason) :)
-      //add code here to make the text in the input box to clear after adding the task
       document.querySelector(".taskToAdd").value = "";
     }
   };
@@ -29,15 +44,22 @@ export const TaskProvider = ({ children }) => {
     setAllTasks(filteredTasks);
   };
 
-  const [allTasks, setAllTasks] = useState([]);
-  const [showAddTask, setShowAddTask] = useState(true)
+const editTask = (task) => {
+   setCurrentTask({...task})
+   setAllTasks(allTasks.filter((t) => t !== task))
+}
 
   const values = {
     allTasks,
     deleteTask,
     addNewTask,
     showAddTask,
-    setShowAddTask
+    completedTasks,
+    setCompletedTasks,
+    setShowAddTask,
+    editTask,
+    currentTask,
+    setCurrentTask
   };
 
   // adds current task to the tasklist
