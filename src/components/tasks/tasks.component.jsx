@@ -2,7 +2,6 @@ import { useContext } from "react";
 import "./tasks.style.css";
 import { TaskContext } from "../../context/tasks.context";
 import Task from "../task/task.component";
-import CompletedTasks from "../completed tasks/completedtasks.component";
 
 
 const Tasks = () => {

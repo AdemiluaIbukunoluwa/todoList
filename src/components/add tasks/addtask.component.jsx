@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import "./addtask.styles.css";
 import { TaskContext } from "../../context/tasks.context";
 
@@ -10,7 +10,7 @@ const AddTask = () => {
 
   const addNewTaskHandler = () => {
     addNewTask(currentTask);
-    setCurrentTask({ ...currentTask, text: null });
+    setCurrentTask({ ...currentTask, text: '' });
   };
 
   return (
@@ -42,6 +42,7 @@ const AddTask = () => {
           <label>Time</label>
           <input
             type="time"
+            value={currentTask.time}
             onChange={(event) => setCurrentTask({...currentTask, time:event.target.value})}
           />
         </div>

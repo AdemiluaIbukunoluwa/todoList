@@ -8,12 +8,9 @@ export const TaskContext = createContext({
   setAllTasks: () => [],
   deleteTask: () => {},
   addNewTask: () => {},
-  completedTasks: [],
-  setCompletedTasks: () => [],
-  setCompletedTasksHandler: () => {},
   showAddTask: true,
   setShowAddTask: () => {},
-  editTask: () => {}
+  editTask: () => {},
 });
 
 export const TaskProvider = ({ children }) => {
@@ -21,15 +18,15 @@ export const TaskProvider = ({ children }) => {
   // const time = date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
   const [allTasks, setAllTasks] = useState([]);
   const [showAddTask, setShowAddTask] = useState(true)
-  const [completedTasks, setCompletedTasks] = useState([])
+
   const [currentTask, setCurrentTask] = useState({
-    text: null,
+    text: '',
     color: "#5ad4ed",
     isChecked: false,
   });
   
   const addNewTask = (task) => {
-    if (task.text) {
+    if (task.text!== '' && task.text)  {
       setAllTasks([...allTasks, {...task}])
       //this allows the task to show immediately i click add(for some reason) :)
       document.querySelector(".taskToAdd").value = "";
@@ -45,7 +42,7 @@ export const TaskProvider = ({ children }) => {
   };
 
 const editTask = (task) => {
-   setCurrentTask({...task})
+   setCurrentTask(task)
    setAllTasks(allTasks.filter((t) => t !== task))
 }
 
@@ -54,12 +51,11 @@ const editTask = (task) => {
     deleteTask,
     addNewTask,
     showAddTask,
-    completedTasks,
-    setCompletedTasks,
     setShowAddTask,
     editTask,
     currentTask,
-    setCurrentTask
+    setCurrentTask,
+    setAllTasks
   };
 
   // adds current task to the tasklist
