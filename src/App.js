@@ -1,12 +1,8 @@
-import { useContext } from "react";
 import "./App.css";
 import AddTask from "./components/add tasks/addtask.component";
 import Tasks from "./components/tasks/tasks.component";
-import { TaskContext } from "./context/tasks.context";
 
 function App() {
-
-  const {showAddTask, setShowAddTask} = useContext(TaskContext)
 
   // const showAddTaskHandler = () => {
   //   setShowAddTask(!showAddTask)

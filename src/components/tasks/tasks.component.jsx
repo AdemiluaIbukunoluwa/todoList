@@ -8,8 +8,7 @@ const Tasks = () => {
   const { allTasks } = useContext(TaskContext);
   return (
     <div className="tasks col-6">
-     <h3>Things to do</h3>
-
+     <h3>Tasks</h3>
       <div className="tasklist">
         {
           allTasks.map((taskObj) => {

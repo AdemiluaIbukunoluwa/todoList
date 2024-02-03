@@ -25,11 +25,8 @@ const AddTask = () => {
             setCurrentTask({ ...currentTask, text: event.target.value })
           }
         />
-        <button className="addTaskButton" onClick={addNewTaskHandler}>
-          Add Task
-        </button>
         <div className="selectColor">
-          <label>Select Color</label>
+          {/* <label>Select Color</label> */}
           <input
             type="color"
             value={currentTask.color}
@@ -39,7 +36,7 @@ const AddTask = () => {
           />
         </div>
         <div className="time">
-          <label>Time</label>
+          {/* <label>Time</label> */}
           <input
             type="time"
             value={currentTask.time}
@@ -47,6 +44,9 @@ const AddTask = () => {
           />
         </div>
       </div>
+      <button className="addTaskButton" onClick={addNewTaskHandler}>
+          Add Task
+        </button>
     </div>
   );
 };

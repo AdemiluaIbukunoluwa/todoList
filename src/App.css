@@ -1,21 +1,22 @@
 body {
-  background-color: #eefdec;
-}
-body {
   height: 100%;
   width: 100%;
+  border-style: outset;
+  background-color: #EEF5FF;
 }
 .heading {
-  font-family: "Gloria Hallelujah", cursive;
-  font-size: 3vw;
+  /* font-family: "Gloria Hallelujah", cursive; */
+  font-family: Imprima;
+  font-size: 4vw;
   height: 5vw;
   margin-top: 2%;
   margin-bottom: 3%;
 }
 .components {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  width: 50%;
 }
 .tasks,
 .addTask {
@@ -26,9 +27,6 @@ body {
   background-color: #7fa8e6;
 }
 
-.addTask {
-  background-color: white;
-}
 
 .addButton {
   display: none;
