@@ -2,7 +2,6 @@ body {
   height: 100%;
   width: 100%;
   border-style: outset;
-  background-color: #EEF5FF;
 }
 .heading {
   /* font-family: "Gloria Hallelujah", cursive; */
@@ -40,23 +39,7 @@ body {
   float: left;
 }
 @media screen and (max-width: 1100px) {
-  /* .addTask {
-    display: none;
-  }
-  .tasks {
-    width: 100vw;
-  }
-  .addButton {
-    display: block;
-  } */
-
-  .components{
-    flex-direction: column;
-  }
-
   .heading{
-    font-size: 1.5rem;
-    float: left;
-    margin-left: 20px;
+    font-weight: 600;
   }
 }
