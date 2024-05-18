@@ -1,4 +1,4 @@
-.deleteTask, .editTask{
+.deleteTask{
     background: transparent;
     background-image: url('../../assets/DeleteTask.png');
     background-repeat: no-repeat;
@@ -9,10 +9,11 @@
     padding-right: 5px;
 }
 .editTask{
-    background-image: url('../../assets/Edit.png');
-    width: 20px;
-    height: 25px;
+    /* background-image: url('../../assets/Edit.png'); */
+    font-size: 1rem;
     margin-right: 5px;
+    background: none;
+    border: none;
 }
 .timevalue{
     font-size: 0.7rem;
@@ -22,23 +23,22 @@
 }
 .task{
     /* height: 30px; */
-    width: 40vw;
-    margin: auto;
-    padding: auto;
-    background-color: aliceblue;
+    width: 100%;
+    margin: auto 0;
+    padding: 0 10px;
+    background-color: #CAF4FF;
     display: flex;
     flex-direction: row;
-    font-size: 20px;
-    font-family: Imprima;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    border: 2px solid rgb(177, 205, 218);
+    border-radius: 10px;
 }
 
 input[type='checkbox']{
     accent-color: black;
-    margin: 4px 0 0;
     line-height: normal;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 25px;
 }
 @media screen and (max-width: 1100px) {
     .task{

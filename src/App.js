@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="App text-center">
-      <h1 className="heading">My to-do List</h1>
+      {/* <h1 className="heading">My to-do List</h1> */}
       <div className="components container-fluid"> 
       {/* <button className="addButton" onClick={showAddTaskHandler}></button> */}
         <AddTask/>

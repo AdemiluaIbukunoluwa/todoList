@@ -4,7 +4,6 @@
   background: none;
   align-self: center;
   text-align: center;
-  background-color: #B4D4FF;
   padding-bottom: 20px;
 }
 .taskDetails{
@@ -18,7 +17,6 @@
   width: 120px;
   height: 40px;
   color: rgba(236, 245, 245, 0.98);
-  font-family: Imprima;
   font-size: 18px;
   font-weight: 400;
   background-color: #4942E4;
@@ -49,8 +47,8 @@ input[type = 'text']{
   flex-direction: column;
   color: rgba(0, 0, 0, 0.49)
 }
-.time{
-  margin-top: 2%;
+.time input{
+  border: none;
 }
 .selectColor input{
   border: none;

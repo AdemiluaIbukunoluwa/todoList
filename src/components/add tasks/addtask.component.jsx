@@ -27,13 +27,13 @@ const AddTask = () => {
         />
         <div className="selectColor">
           {/* <label>Select Color</label> */}
-          <input
+          {/* <input
             type="color"
             value={currentTask.color}
             onChange={(event) =>
               setCurrentTask({ ...currentTask, color: event.target.value })
             }
-          />
+          /> */}
         </div>
         <div className="time">
           {/* <label>Time</label> */}

@@ -2,11 +2,8 @@
     width: 100%;
     align-self: center;
 }
-.tasks h3{
+.tasks-title{
     margin-top: 20px;
-    text-align: center;
-    font-size: 3rem;
-    font-family: Imprima;
 }
 .tasklist{
     margin-top: 5vh;
