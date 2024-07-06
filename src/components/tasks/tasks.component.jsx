@@ -7,8 +7,8 @@ import Task from "../task/task.component";
 const Tasks = () => {
   const { allTasks } = useContext(TaskContext);
   return (
-    <div className="tasks col-6">
-     <p className="tasks-title h2">Tasks</p>
+    <div className="tasks">
+     <p className="logo text-3xl text-center mb-6">Tasks</p>
       <div className="tasklist">
         {
           allTasks.map((taskObj) => {

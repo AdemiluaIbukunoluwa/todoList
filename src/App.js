@@ -1,5 +1,6 @@
 import "./App.css";
 import AddTask from "./components/add tasks/addtask.component";
+import Heading from "./components/heading/heading";
 import Tasks from "./components/tasks/tasks.component";
 
 function App() {
@@ -19,13 +20,10 @@ function App() {
   // }
 
   return (
-    <div className="App text-center">
-      {/* <h1 className="heading">My to-do List</h1> */}
-      <div className="components container-fluid"> 
-      {/* <button className="addButton" onClick={showAddTaskHandler}></button> */}
+    <div className="App">
+      <Heading/>
         <AddTask/>
         <Tasks/>
-      </div>
     </div>
   );
 }

@@ -1,52 +1,43 @@
 import { useContext } from "react";
-import "./addtask.styles.css";
 import { TaskContext } from "../../context/tasks.context";
 
 const AddTask = () => {
   const { addNewTask, currentTask, setCurrentTask } = useContext(TaskContext);
-
-
-  // default color for each task is black, might change later*
-
   const addNewTaskHandler = () => {
     addNewTask(currentTask);
-    setCurrentTask({ ...currentTask, text: '' });
+    setCurrentTask({ ...currentTask, text: "" });
   };
-
   return (
-    <div className="addTask col-6">
-      <div className="taskDetails">
+    <div className="addTask m-4 p-4 mb-12">
+      <div className="taskDetails text-center flex justify-center">
         <input
           type="text"
           placeholder="New Task"
-          className="taskToAdd"
+          className="taskToAdd border sm:w-full p-3 mr-5 lg:w-3/5"
           value={currentTask.text}
           onChange={(event) =>
             setCurrentTask({ ...currentTask, text: event.target.value })
           }
         />
-        <div className="selectColor">
-          {/* <label>Select Color</label> */}
-          {/* <input
-            type="color"
-            value={currentTask.color}
-            onChange={(event) =>
-              setCurrentTask({ ...currentTask, color: event.target.value })
-            }
-          /> */}
-        </div>
         <div className="time">
-          {/* <label>Time</label> */}
           <input
             type="time"
+            className="border-2 border-black p-1"
             value={currentTask.time}
-            onChange={(event) => setCurrentTask({...currentTask, time:event.target.value})}
+            onChange={(event) =>
+              setCurrentTask({ ...currentTask, time: event.target.value })
+            }
           />
         </div>
       </div>
-      <button className="addTaskButton" onClick={addNewTaskHandler}>
-          Add Task
-        </button>
+      <div className="text-center">
+      <button
+        className="addTaskButton bg-blue-500 hover:bg-white hover:text-black hover:border-blue-400 hover:border   text-white font-bold p-3 rounded shadow mt-3"
+        onClick={addNewTaskHandler}
+      >
+        Add Task
+      </button>
+      </div>
     </div>
   );
 };
