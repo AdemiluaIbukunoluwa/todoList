@@ -14,7 +14,7 @@ const Task = ({ task, id }) => {
     setAllTasks(tasks);
   };
   return (
-      <div className="sm:w-4/5 flex rounded px-4 py-2 bg-blue-200 mx-auto my-3 text-design"   style={
+      <div className="flex rounded px-4 py-2 border border-black mx-4 my-3 text-design"   style={
         isChecked
           ? {opacity: 0.5}
           : {opacity: 1}

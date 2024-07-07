@@ -1,7 +1,15 @@
 const Heading = () => {
   return (
-    <div className="heading mb-10">
-      <h1 className="logo text-xl pl-3 pt-3 text-blue-400 lowercase">TODOSPHERE</h1>
+    <div className="heading mb-10 px-3 pt-6">
+      <h1 className="logo text-2xl text-blue-400 inline lowercase"><a href="/">
+        TODOSPHERE
+        </a>
+      </h1>
+      {/* <div className="flex text-sm w-50 float-right text-design">
+        <a href="#" className="px-3 py-1 rounded bg-white hover:bg-blue-300 hover:text-white mr-3 hover:border-slate-950">
+          completed tasks
+        </a>
+      </div> */}
     </div>
   );
 };
