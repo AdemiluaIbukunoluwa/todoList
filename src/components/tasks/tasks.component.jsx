@@ -8,7 +8,7 @@ const Tasks = () => {
   return (
     <div className="tasks ">
      <p className="logo text-3xl text-center mb-6">Tasks</p>
-      <div className="tasklist bg-blue-100 w-1/2 h-96 mx-auto mb-16 overflow-y-scroll">
+      <div className="tasklist bg-blue-100 lg:w-1/2  h-96 mx-auto mb-16 overflow-y-scroll">
         {
           allTasks.map((taskObj) => {
           /* key will be an identifier for that particular task and is the index of the task in the task list*/

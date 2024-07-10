@@ -22,7 +22,7 @@ export const TaskProvider = ({ children }) => {
   const [currentTask, setCurrentTask] = useState({
     text: '',
     color: "#5ad4ed",
-    isChecked: false,
+    done: false,
   });
   
   const addNewTask = (task) => {

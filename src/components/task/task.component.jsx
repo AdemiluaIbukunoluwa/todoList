@@ -6,23 +6,23 @@ const Task = ({ task, id }) => {
   // id is the key for the item in the list
   const { deleteTask, editTask, allTasks, setAllTasks } =
     useContext(TaskContext);
-  const { text, time, isChecked } = task;
+  const { text, time, done } = task;
 
   const completeTask = () => {
     const tasks = [...allTasks];
-    tasks[id] = { ...task, isChecked: !isChecked };
+    tasks[id] = { ...task, done: !done };
     setAllTasks(tasks);
   };
   return (
       <div className="flex rounded px-4 py-2 border border-black mx-4 my-3 text-design"   style={
-        isChecked
+        done
           ? {opacity: 0.5}
           : {opacity: 1}
       }>
         <input type="checkbox" onClick={completeTask} className="mr-2 w-5" />
         <p
           style={
-            isChecked
+            done
               ? {textDecoration: "line-through" }
               : {}
           }
