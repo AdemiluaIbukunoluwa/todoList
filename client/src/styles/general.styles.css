@@ -1,8 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
 .background {
     background-color: #96C9F4;
 }
 .logo-font{
     font-family: Gloria Hallelujah,cursive;
+}
+.title{
+        font-family: "Comfortaa", sans-serif;
+        font-optical-sizing: auto;
+}
+.caveat-font{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
 }

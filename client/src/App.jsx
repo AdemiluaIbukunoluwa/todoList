@@ -1,28 +1,27 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './App.css';
 import {Route, Routes} from 'react-router-dom'
 import PageContainer from './Pages/PageContainer/pagecontainer';
 import Signup from './Pages/SignIn/Signup';
 import SignIn from './Pages/SignIn/SignIn';
+import Banner from './Pages/Banner/Banner'; 
 import Home from './Pages/Home/Home';
+import { ToastContainer } from 'react-toastify';
+import CategoryTasks from './Components/CategoryTasks/categoryTasks';
+import { UserDataContext } from './Context/usercontext';
 
 function App() {
-  const [signedIn, setSignedin] = useState(false)
-  useEffect(() => {
-    const st = localStorage.getItem('signedin')
-    if(st === 'true') {
-      setSignedin(true)
-    }
-  })
+  const id = localStorage.getItem("id")
+  const username = useContext(UserDataContext).user.name
   return (
     <>
       <Routes>
-        <Route path='/' element={<PageContainer signedin={signedIn} />}>
-        <Route path='/' element={<Home/>} />
+        <Route path='/' element={id? <Home/> : <Banner/>}/>
         <Route path='/signup' element={<Signup/>} />
         <Route path='/signin' element={<SignIn/>} />
-        </Route>
+        <Route path='/category/:catName/:id' element={<CategoryTasks/>}/>
       </Routes>
+      <ToastContainer/>
     </>
   )
 }
