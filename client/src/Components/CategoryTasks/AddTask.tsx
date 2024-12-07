@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import axiosInstance from '../../Utils/axiosInstance'
-import { TaskContext } from '../../Context/taskcontext'
+// import { TaskContext } from '../../Context/taskcontext'
 import { TaskInterface } from '../../Utils/interfaces'
 import { CategoriesContext } from '../../Context/categoriescontext'
 
-const AddTask = ({catId, closePopup}) => {
+const AddTask = ({catId, closePopup, setTasksToAdd}) => {
 
-  const {tasks, setTasks} = useContext(TaskContext)
   const {currentCategory} = useContext(CategoriesContext)
     const [currentTask, setCurrentTask] = useState<TaskInterface>({
       taskName: "",
@@ -16,12 +15,8 @@ const AddTask = ({catId, closePopup}) => {
 
     const addNewTask = () => {
       if (currentTask.taskName.length > 0) {
-      setTasks([...tasks, currentTask])
-      // axiosInstance.post(`/addTask/${catId}`, {
-      //   tasks: [currentTask]
-      // })
-      closePopup()
-    }
+    setTasksToAdd(currentTask)
+      }
   }
 
   const inputRef = useRef(null)

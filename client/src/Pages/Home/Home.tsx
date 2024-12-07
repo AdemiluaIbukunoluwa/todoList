@@ -57,7 +57,8 @@ const Home = () => {
                 setCategories={setCategories}
                 openDialog={setShowAddCategory}
               />
-            </Dialog>
+            </Dialog>      
+                  
           </div>
         </div>
       </PageContainer>

@@ -27,9 +27,11 @@ export const CategoriesProvider = ({children}) => {
     const {user} = useContext(UserDataContext)
 
     const getCategories = async() => {
+        console.log('..fetching')
         axiosInstance
         .get(`/categories/${user._id}`)
-        .then((data) => setCategories(data.data));
+        .then((data) => {setCategories(data.data)
+        });
     }
 
     const getCategory = async(id) => {

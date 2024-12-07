@@ -109,17 +109,20 @@ app.delete("/deletecategory/:id", async (req, res) => {
 
 app.post("/addTask/:id", async (req, res) => {
   try {
-    const {id} = req.params
-    console.log(req.body)
-  const categories = await Category.findByIdAndUpdate(id, {tasks: req.body})
-    categories.save()
+    const {id} = req.params;
+    const categories = await Category.findByIdAndUpdate(
+      id, 
+      // add task to the list of tasks
+      { $push: { tasks: req.body.task } },
+      { new: true, runValidators: true }
+    );
     res.status(200).json(categories);
-}
-catch (error) {
-  console.log(error.message)
-  res.status(500).json({ message: error.message });
-}
-})
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: error.message });
+  }
+});
+
 
 app.get("/getuser/:id", async (req, res) => {
   try {
