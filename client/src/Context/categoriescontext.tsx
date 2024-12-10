@@ -24,12 +24,12 @@ export const CategoriesProvider = ({children}) => {
     const [categories, setCategories] = useState([])
     const [currentCategory, setCurrentCategory] = useState(null)
 
-    const {user} = useContext(UserDataContext)
+    const userid = localStorage.getItem('id')
 
     const getCategories = async() => {
         console.log('..fetching')
         axiosInstance
-        .get(`/categories/${user._id}`)
+        .get(`/categories/${userid}`)
         .then((data) => {setCategories(data.data)
         });
     }

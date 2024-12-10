@@ -55,11 +55,11 @@ const CategoryTasks = () => {
           />
         </Link>
         <p className="header text-center text-3xl ">{category?.catName}</p>
-        <div className="m-5 p-3">
+        {/* <div className="m-5 p-3">
           {category ? category.tasks?.map((task, index) => {
             return <Task key={index} taskName={task.taskName} />;
           }): <p>Loading...</p>}
-        </div>
+        </div> */}
       </div>
 
       {showAddTask == true && (
