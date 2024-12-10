@@ -15,33 +15,21 @@ export const CategoriesContext = createContext({
     setCategories: () => {},
     // createCategory: () => {},
     getCategories: () => {},
-    currentCategory: null,
-    setCurrentCategory: (category) => {},
-    getCategory : (id) => {},
 })
 
 export const CategoriesProvider = ({children}) => {
     const [categories, setCategories] = useState([])
-    const [currentCategory, setCurrentCategory] = useState(null)
 
     const userid = localStorage.getItem('id')
 
     const getCategories = async() => {
-        console.log('..fetching')
         axiosInstance
         .get(`/categories/${userid}`)
         .then((data) => {setCategories(data.data)
         });
     }
-
-    const getCategory = async(id) => {
-        axiosInstance
-        .get(`/getcategory/${id}`)
-        .then((data) => setCurrentCategory(data.data));
-    }
     
-
-    const values = {categories, setCategories, getCategories, currentCategory, setCurrentCategory, getCategory}
+    const values = {categories, setCategories, getCategories}
 
     return (
         <CategoriesContext.Provider value={values}>
