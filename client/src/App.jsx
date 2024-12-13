@@ -17,6 +17,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={id? <Home/> : <Banner/>}/>
+        <Route path='/welcome' element={ <Banner/>}/>
         <Route path='/signup' element={<Signup/>} />
         <Route path='/signin' element={<SignIn/>} />
         <Route path='/category/:catName/:id' element={<CategoryTasks/>}/>

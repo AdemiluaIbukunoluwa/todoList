@@ -27,7 +27,7 @@ const AddCategory = ({currentCategories, setCategories, openDialog}) => {
       }})
       .then(() => openDialog(false))
       .then(() => toast.success("Category created"))
-      // fetch the  updated categories from the db
+      // fetch the updated categories from the db
       .then(() => getCategories())
       .catch((error) => {
         toast.error("Error creating category, try again later!")

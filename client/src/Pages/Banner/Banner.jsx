@@ -1,13 +1,12 @@
 import React from "react";
-import addicon from '../../assets/homepage-icons/add.gif'
-import taskicon from '../../assets/homepage-icons/task.gif'
 import DoneAllOutlinedIcon from '@mui/icons-material/DoneAllOutlined';
-import { Link } from "react-router-dom";
-import SignedOutHeader from "../../Components/Header/SignedOutHeader";
+import { Link } from "react-router-dom";import PageContainer from "../PageContainer/pagecontainer";
+;
 
 const Banner = () => {
   return (
-    <div className="bg-white w-5/6 sm:w-4/5 sm:h-3/4 lg:w-4/6 m-auto rounded-lg mt-10 shadow-2xl">
+    <PageContainer>
+    <div className="bg-white w-5/6 sm:w-4/5 sm:h-3/4 lg:w-4/6 m-auto rounded-lg mt-10 shadow-2xl align-middle">
       <div className="image-content">
       {/* <img src={addicon} alt="addicon" className="addicon w-20" />
       <img src={taskicon} alt="taskicon" className="taskicon w-20 block m-auto" /> */}
@@ -26,6 +25,7 @@ const Banner = () => {
       </div>
       </div>
     </div>
+    </PageContainer>
   );
 };
 
