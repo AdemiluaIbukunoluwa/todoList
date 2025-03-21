@@ -20,9 +20,8 @@ const SignedInHeader = ({username=''}) => {
         <div className="flex flex-row justify-between items-center p-5">
             <Logo/>
             <div className="flex">
-                {/* <p>Welcome, {username}</p> */}
                 <Avatar>{username.charAt(0).toUpperCase()}</Avatar>
-                <Link to={'/welcome'} onClick={() => localStorage.removeItem('id')} className="ml-4 text-xl font-medium border bg-white px-2 rounded-md hover:bg-transparent">Log out</Link>
+                <Link to={'/welcome'} onClick={() => localStorage.removeItem('id')} className="ml-4 text-lg font-medium text-white px-2 rounded-md hover:underline">Log out</Link>
             </div>
         </div>
     )

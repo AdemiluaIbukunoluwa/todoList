@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext} from 'react'
 import './App.css';
 import {Route, Routes} from 'react-router-dom'
-import PageContainer from './Pages/PageContainer/pagecontainer';
 import Signup from './Pages/SignIn/Signup';
 import SignIn from './Pages/SignIn/SignIn';
 import Banner from './Pages/Banner/Banner'; 
@@ -17,7 +16,6 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={id? <Home/> : <Banner/>}/>
-        <Route path='/welcome' element={ <Banner/>}/>
         <Route path='/signup' element={<Signup/>} />
         <Route path='/signin' element={<SignIn/>} />
         <Route path='/category/:catName/:id' element={<CategoryTasks/>}/>

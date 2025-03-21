@@ -26,6 +26,7 @@ app.post("/createuser", async (req, res) => {
       password,
     });
     await user.save();
+    
     res.status(200).json(user._id);
   } catch (error) {
     console.log(error);
@@ -134,7 +135,6 @@ app.delete('/deletetask/:categoryId/:taskId', async(req, res) => {
     { new: true, runValidators: true }
   );
   res.status(200).json(categories);
-  console.log(categories)
 }
 catch (error) {
   console.log(error.message);

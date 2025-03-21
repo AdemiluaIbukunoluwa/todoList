@@ -19,7 +19,7 @@ const Signup = () => {
   const signup = async (e) => {
     e.preventDefault();
     if (data.password !== data.confirmPassword) {
-      toast.error("password does not match");
+      toast.error("Password's do not match");
       return;
     }
     await axiosInstance
@@ -30,7 +30,6 @@ const Signup = () => {
       })
       .then((res) => {
         toast.success("Signup successful");
-        localStorage.setItem("id", res.data);
         // Redirect after a short delay
         setTimeout(() => {
           navigate("/signin");
