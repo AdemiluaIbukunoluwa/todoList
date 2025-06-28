@@ -154,7 +154,6 @@ app.get("/getuser/:id", async (req, res) => {
 });
 
 
-
 MONGODB_URI = "mongodb+srv://ademiluatise:00YOjr9FfYFDeKM4@data.a7eqv.mongodb.net/?retryWrites=true&w=majority&appName=data"
 mongoose
   .connect(MONGODB_URI)
