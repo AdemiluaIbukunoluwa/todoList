@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const User = require("./models/userdata.model");
 const Category = require("./models/category.model");
 const { decrypt } = require("./utils/utility");
+const MONGODB_URI = dotenv.config({path: "../.env"}).parsed.MONGODB_URI;
 
 const app = express();
 app.use(cors());
