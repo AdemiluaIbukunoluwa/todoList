@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const User = require("./models/userdata.model");
 const Category = require("./models/category.model");
 const { decrypt } = require("./utils/utility");
+const MONGODB_URI = dotenv.config({path: "../.env"}).parsed.MONGODB_URI;
 
 const app = express();
 app.use(cors());
@@ -153,9 +154,6 @@ app.get("/getuser/:id", async (req, res) => {
   }
 });
 
-
-
-MONGODB_URI = "mongodb+srv://ademiluatise:00YOjr9FfYFDeKM4@data.a7eqv.mongodb.net/?retryWrites=true&w=majority&appName=data"
 mongoose
   .connect(MONGODB_URI)
   .then(() => {
